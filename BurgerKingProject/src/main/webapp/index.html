@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+	h1 {
+		color: orange;
+		text-align: center;
+		font-size: 80px;
+	}
+	h1:hover, 
+	button:hover {
+		background-color: orange;
+		color: white;
+	}
+	button {
+		width: 120px;
+		height: 30px;
+		background-color: green;
+		color: white;
+		border: none;		
+	}
+</style>
+<title>Index</title>
+</head>
+<body>
+	<h1>503</h1>
+	<hr>	
+	<a href="static/Request_Page.html">as</a>	
+	<button onclick="forwardRequestPage();">주문하기</button>
+	<script>
+		function forwardRequestPage() {
+			location.href = 'http://127.0.0.1/bk/static/Request_Page.html';
+		}
+	</script>	
+</body>
+</html>
