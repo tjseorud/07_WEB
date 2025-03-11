@@ -20,6 +20,11 @@
 		절대 경로방식 : /bm/sc
 		상대 경로방식 : sc
 	-->
-	<a href="sc">I Want To Go Home</a>
+	<a href="sc">I WANT TO GO HOME</a>
+	<hr>
+	<a href="include">포함하다</a><br>
+	<a href="forward">forward</a>
+	<hr>
+	<a href="jstl">실과 바늘?</a>
 </body>
 </html>

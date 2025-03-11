@@ -5,8 +5,7 @@
 
 META-INF
 Servers
-.classpath
-.project
+#.classpath
 
 ### Eclipse ###
 .metadata
