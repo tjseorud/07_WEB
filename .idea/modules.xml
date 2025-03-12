@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/07_WEB.iml" filepath="$PROJECT_DIR$/.idea/07_WEB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.egit.core/.org.eclipse.egit.core.cmp/.org.eclipse.egit.core.cmp.iml" filepath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.egit.core/.org.eclipse.egit.core.cmp/.org.eclipse.egit.core.cmp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BurgerKingProject/BurgerKingProject.iml" filepath="$PROJECT_DIR$/BurgerKingProject/BurgerKingProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/McdonaldProject/McdonaldProject.iml" filepath="$PROJECT_DIR$/McdonaldProject/McdonaldProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyFirstWebProject/MyFirstWebProject.iml" filepath="$PROJECT_DIR$/MyFirstWebProject/MyFirstWebProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDKProject/SDKProject.iml" filepath="$PROJECT_DIR$/SDKProject/SDKProject.iml" />
     </modules>
   </component>
 </project>
