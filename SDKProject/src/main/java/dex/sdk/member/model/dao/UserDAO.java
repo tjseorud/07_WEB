@@ -37,16 +37,27 @@ public class UserDAO {
 						rset.getString("USER_ID"),
 						rset.getString("USER_PW"),
 						rset.getString("USER_NAME"),
-						rset.getString("ENROLL_DATE")
+						rset.getDate("ENROLL_DATE")
 					);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			if(rset != null) { rset.close; }
-			if(pstmt != null) { pstmt.close; }
-		} catch (Exception e) {
- 	   		e.printStackTrace();
+			try {
+				if(rset != null) rset.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			try {
+				if(pstmt != null) pstmt.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			try {
+				if(conn != null) conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		return loginUser;
 	}
