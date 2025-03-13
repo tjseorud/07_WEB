@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import dex.sdk.member.model.dto.UserDTO;
 import dex.sdk.member.model.service.UserService;
 
-@WebServlet("/signup")
+@WebServlet("/sign-up")
 public class SignUpController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
