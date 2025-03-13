@@ -22,7 +22,7 @@
 	
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	<style>		
+	<style>
 		#mainNav .navbar-nav .nav-item .nav-link {
 		        font-weight: 600;
 		    }
@@ -89,7 +89,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 	  	<div class="container">
 		    <a class="navbar-brand" href="#">
-		    	<img class="img-fluid" src="" alt="로고없음" style="width:130px; height:50px;" />
+		    	<img class="img-fluid" src="" alt="로고 자리!" style="width:130px; height:50px;" />
 			</a>
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 			  메뉴<i class="fas fa-bars"></i>
@@ -107,12 +107,12 @@
 								<a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#log-in">로그인</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link js-scroll-trigger" href="signup-form">회원가입</a>
+								<a class="nav-link js-scroll-trigger" href="sign">회원가입</a>
 							</li>
 						</c:when>
 						<c:otherwise>
 							<li class="nav-item">
-								<a class="nav-link js-scroll-trigger" href="myPage">내정보</a>
+								<a class="nav-link js-scroll-trigger" href="my-page">내정보</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link js-scroll-trigger" href="logout" onclick="return confirm('로그아웃?')">로그아웃</a>
@@ -140,7 +140,8 @@
 
 				<!-- Modal body -->
 				<div class="modal-body">
-					<form action="/sdk/login" name="login" method="post" id="loginForm" style="margin-bottom: 0;">
+					<!-- <form action="/sdk/login" name="login" method="post" id="loginForm" style="margin-bottom: 0;"> -->
+					<form action="/SDKProject/login" name="login" method="post" id="loginForm" style="margin-bottom: 0;">
 						<table style="cellpadding: 0; cellspacing: 0; margin: 0 auto; width: 100%">
 							<tr>
 								<td style="text-align: left">

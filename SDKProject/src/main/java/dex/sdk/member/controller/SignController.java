@@ -1,4 +1,4 @@
-package com.kh.mfw.member.controller;
+package dex.sdk.member.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,16 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/my-page")
-public class MyPageController extends HttpServlet {
+@WebServlet("/sign")
+public class SignController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public MyPageController() {
-        super();
-    }
+
+	public SignController() {
+		super();
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/member/my_page.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/member/enroll_form.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

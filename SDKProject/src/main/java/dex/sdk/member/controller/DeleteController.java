@@ -1,22 +1,29 @@
-package com.kh.mfw.member.controller;
+package dex.sdk.member.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/my-page")
-public class MyPageController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    public MyPageController() {
-        super();
-    }
+import dex.sdk.member.model.service.UserService;
 
+@WebServlet("/delete")
+public class DeleteController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public DeleteController() {
+		super();
+	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/member/my_page.jsp").forward(request, response);
+		request.setCharacterEncoding("UTF-8");
+		String userId = request.getRequestedSessionId();	//request.getSession()
+		String userPw = request.getParameter("userPwd");	
+		
+		new UserService().delete(userId, userPw);
+		response.sendRedirect(request.getContextPath() + "/logout");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
