@@ -5,48 +5,128 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<link href=resources/css/header.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+	
+	<!-- Custom fonts for this template -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+	
+	<!-- Custom styles for this template -->
+	<link href="resources/css/agency.min.css" rel="stylesheet">
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<style>		
+		#mainNav .navbar-nav .nav-item .nav-link {
+		        font-weight: 600;
+		    }
+	    #sub-bg{
+	        width : 80%;
+	        margin : auto;
+	        height : 1200px;
+	        padding-top : 60px;
+	        padding-bottom : 60px;
+	        margin-top : 300px;
+	    }
+	    #sub-1{
+	        width : 70%;
+	        height : 40%;
+	        margin-right : auto;
+	       /*  background-image: ; */
+	        background-size: cover;
+	        background-repeat: none;
+	    }
+	    #sub-2{
+	        margin-top : 120px;
+	        width : 70%;
+	        margin-left : auto;
+	        height : 40%;
+	       /*  background-image: ; */
+	        background-size: cover;
+	        background-repeat: none;
+	    }
+	    footer{
+	        border-top: #52b1ff28 1px solid;
+	    }
+		.dropdown:hover > .dropdown-menu { 
+		        display: block;  
+		    }    
+		/* 로그인 Modal */
+		#loginId{
+			margin-bottom: 25px;
+			width: 100%;
+		 	height: 40px;
+		  	border: 1px solid #d9d9de;
+		}    
+		#loginPw{
+			ime-mode: inactive;
+			margin-bottom: 25px;
+			height: 40px;
+			border: 1px solid #d9d9de;
+		} 
+		#login-btn{
+			background-color: #52b1ff;
+			margin-top: 0;
+			height: 40px;
+			color: white;
+			border: 0px solid #f78f24;
+			opacity: 0.8;
+		}
+		.modal-title > span{
+			color: #52b1ff;
+		}
+	</style>
 <title>SDK</title>
 </head>
-<body>
-	<div>
-		<ul>
-			<li class="top-item">
-				<a href="#">HOME</a>
-			</li>
-			<li class="top-item">
-				<a href="#">공지사항</a>
-			</li>
-			<li class="top-item">
-				<a href="#">1</a>
-			</li>
-			<li class="top-item">
-				<a href="#">2</a>
-			</li>
-
-			<c:choose>
-				<c:when test="${ empty loginUser }">
-					<li class="top-item">
-						<a data-toggle="modal" data-target="#login-form">로그인</a>
+<body  id="page-top">
+  	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+	  	<div class="container">
+		    <a class="navbar-brand" href="#">
+		    	<img class="img-fluid" src="" alt="로고없음" style="width:130px; height:50px;" />
+			</a>
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+			  메뉴<i class="fas fa-bars"></i>
+			</button>
+	
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+			  	<ul class="navbar-nav text-uppercase ml-auto">
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#">HOME</a>
 					</li>
-					<li class="top-item">
-						<a href="signup-form">회원가입</a>
-					</li>
-				</c:when>
-				<c:otherwise>
-					<li class="top-item">
-						<a href="myPage">내정보</a>
-					</li>
-					<li class="top-item">
-						<a href="logout" onclick="return confirm('로그아웃?')">로그아웃</a>
-					</li>
-				</c:otherwise>
-			</c:choose>
-		</ul>
-	</div>
+		
+					<c:choose>
+						<c:when test="${ empty loginUser }">
+							<li class="nav-item">
+								<a class="nav-link js-scroll-trigger" data-toggle="modal" data-target="#log-in">로그인</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link js-scroll-trigger" href="signup-form">회원가입</a>
+							</li>
+						</c:when>
+						<c:otherwise>
+							<li class="nav-item">
+								<a class="nav-link js-scroll-trigger" href="myPage">내정보</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link js-scroll-trigger" href="logout" onclick="return confirm('로그아웃?')">로그아웃</a>
+							</li>
+						</c:otherwise>
+					</c:choose>
+				</ul>
+			</div>
+ 		</div>
+	</nav>
+	
 
 	<!-- 로그인 Modal-->
-	<div class="modal fade" id="#login-form">
+	<div class="modal fade" id="log-in">
 		<div class="modal-dialog">
 			<div class="modal-content">
 

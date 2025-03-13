@@ -5,23 +5,21 @@
 <head>
 
 </head>
-<body>
+<body id="page-top">
 
 	<!-- Footer -->
 	<footer>
 		<div class="container">
-			<div>
-				<div>
+			<div  class="row">
+				<div class="col-md-4">
 					<span class="copyright">Copyright &copy; By tjseorud 2025</span>
-				</div>
-				<div>
-					<ul>
-						<li><a href="#">Main</a></li>
-					</ul>
 				</div>
 			</div>
 		</div>
 	</footer>
 
 </body>
+ <script>
+    AOS.init();
+ </script>
 </html>

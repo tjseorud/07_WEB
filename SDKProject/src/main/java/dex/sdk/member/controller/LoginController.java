@@ -28,34 +28,21 @@ public class LoginController extends HttpServlet {
 		//request.getParameter("??요소의 ??속성 값");
 		String userId = request.getParameter("userId");
 		String userPw = request.getParameter("userPw");
-//		System.out.println("입력받은 id :"+userId+"\n입력받은 pw :"+memberPw);
+		System.out.println("입력받은 id :"+userId+"\n입력받은 pw :"+userPw);
 		
 		// 3) 값이 두 개 이상일 경우 어딘가에 담아두기
 		UserDTO userDTO = new UserDTO();
 		userDTO.setUserId(userId);
 		userDTO.setUserPw(userPw);
 		
-		UserDTO loginMember = new UserService().login(userDTO);
-		/* case 1. 아이디와 비밀번호 값이 일치 했다면 필드값에 회원정보가 담겨있는 MemberDTO객체의 주소값
-		/* case 2. 유효성 검증에 통과하지 못 했거나, 아이디와 비밀번호가 일치하지 않았다면 
-		 */
+		UserDTO loginUser = new UserService().login(userDTO);
+
 		// 4) 응답화면 만들기
-		request.setAttribute("loginMember", loginMember);
-		/*
-		 * 로그인에 성공시 로그인한 회원의 정보를 
-		 * 로그아웃 요청이 들어오거나, 브라우저를 종료하기 전까지는
-		 * 계속 사용할수 있어야 하기때문에,
-		 * Session이 라는 저장소에 값을 담아둠
-		 * 
-		 * Session의 자료형 :HttpSession
-		 */
+		request.setAttribute("loginUser", loginUser);
+
 		HttpSession session = request.getSession();
-		session.setAttribute("loginMember",loginMember);		
-//		request.getRequestDispatcher("index.jsp").forward(request, response);
-		//http://127.0.0.1/mfw
-		/* sendRedirect : Client에게 재요철할 URL을 알려주어서
-		 * Client가 다시 요청을 보내게 만드는 방법
-		 */
+		session.setAttribute("loginUser", loginUser);		
+
 		String contextPath = request.getContextPath();
 		response.sendRedirect(contextPath);	//재요청방식
 	}

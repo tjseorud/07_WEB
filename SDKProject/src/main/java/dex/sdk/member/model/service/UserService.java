@@ -7,7 +7,6 @@ import dex.sdk.member.model.dto.UserDTO;
 import dex.sdk.util.SdkUtil;
 
 public class UserService {
-	private UserDAO userDAO = new UserDAO();
 	
 	public UserDTO login(UserDTO userDTO) {
 		Connection conn = SdkUtil.getConnection();	

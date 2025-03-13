@@ -20,7 +20,7 @@ public class UserDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		String sql ="""
-				SELECT USER_NO, USER_ID, USER_PW, USER_NAME, ENROLL_DATE
+				SELECT USER_ID, USER_PW, USER_NAME, ENROLL_DATE
 				FROM TB_USER
 				WHERE USER_ID = ? AND USER_PW = ?
 				""";
@@ -33,7 +33,6 @@ public class UserDAO {
 			
 			if(rset.next()) {
 				loginUser = new UserDTO(
-						rset.getInt("USER_NO"),
 						rset.getString("USER_ID"),
 						rset.getString("USER_PW"),
 						rset.getString("USER_NAME"),

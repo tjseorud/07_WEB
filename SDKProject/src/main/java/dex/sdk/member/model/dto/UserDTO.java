@@ -3,7 +3,6 @@ package dex.sdk.member.model.dto;
 import java.sql.Date;
 
 public class UserDTO {	
-	private int userNo;
 	private String userId;
 	private String userPw;
 	private String userName;
@@ -12,21 +11,14 @@ public class UserDTO {
 	public UserDTO() {
 		super();
 	}
-	public UserDTO(int userNo, String userId, String userPw, String userName, Date enrollDate) {
+	public UserDTO(String userId, String userPw, String userName, Date enrollDate) {
 		super();
-		this.userNo = userNo;
 		this.userId = userId;
 		this.userPw = userPw;
 		this.userName = userName;
 		this.enrollDate = enrollDate;
 	}
 	
-	public int getUserNo() {
-		return userNo;
-	}
-	public void setUserNo(int userNo) {
-		this.userNo = userNo;
-	}
 	public String getUserId() {
 		return userId;
 	}
@@ -54,8 +46,7 @@ public class UserDTO {
 	
 	@Override
 	public String toString() {
-		return "UserDTO [userNo=" + userNo + ", userId=" + userId + ", userPw=" + userPw + ", userName=" + userName
-				+ ", enrollDate=" + enrollDate + "]";
+		return "UserDTO [userId=" + userId + ", userName=" + userName + ", enrollDate=" + enrollDate + "]";
 	}	
 	
 }

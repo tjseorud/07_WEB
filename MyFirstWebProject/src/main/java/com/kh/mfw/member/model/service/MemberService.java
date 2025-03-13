@@ -20,4 +20,14 @@ public class MemberService {
 		MemberDTO loginMember = new MemberDAO().login(memberDTO);	
 		return loginMember;
 	}
+
+	public int signUp(MemberDTO memberDTO) {
+		int result = new MemberDAO().checkId(memberDTO.getMemberId());
+		
+		if(result > 0) {
+			return result; 
+		}
+		new MemberDAO().signUp(memberDTO);
+		return result;	
+	}
 }
