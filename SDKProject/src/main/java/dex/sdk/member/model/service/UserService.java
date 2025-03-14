@@ -19,17 +19,12 @@ public class UserService {
 		return result;		
 	}
 
-	public int updatePw(String userId, String userPw, String changePw) {
-		int result = new UserDAO().checkPw(userPw);
-		if(result > 0) {
-			return result;
-		}
-		new UserDAO().updatePw(userId, userPw, changePw);
-		return result;
+	public int updatePw(String userId, String userPw, String changePw) {		
+		return new UserDAO().updatePw(userId, userPw, changePw);
 	}
 
-	public void delete(String userId, String userPw) {
-		new UserDAO().delete(userId, userPw);
+	public int delete(String userId, String userPw) {
+		return new UserDAO().delete(userId, userPw);
 	}
 
 }

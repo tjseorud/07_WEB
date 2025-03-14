@@ -140,8 +140,7 @@
 
 				<!-- Modal body -->
 				<div class="modal-body">
-					<!-- <form action="/sdk/login" name="login" method="post" id="loginForm" style="margin-bottom: 0;"> -->
-					<form action="/SDKProject/login" name="login" method="post" id="loginForm" style="margin-bottom: 0;">
+					<form action="/sdk/login" name="login" method="post" id="loginForm" style="margin-bottom: 0;">
 						<table style="cellpadding: 0; cellspacing: 0; margin: 0 auto; width: 100%">
 							<tr>
 								<td style="text-align: left">

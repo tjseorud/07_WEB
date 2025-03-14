@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dex.sdk.member.model.service.UserService;
 
@@ -18,14 +19,15 @@ public class UpdatePwController extends HttpServlet {
 		super();
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		String userId = request.getRequestedSessionId();	//request.getSession()
+		request.setCharacterEncoding("UTF-8");		
 		String userPw = request.getParameter("userPwd");
 		String changePw = request.getParameter("changePwd");		
 		
-		int result = new UserService().updatePw(userId, userPw, changePw);
-		String path = request.getContextPath();
-		response.sendRedirect(result != 0 ? path + "/logout" : path);
+		HttpSession session = request.getSession();		
+		String userId = null;	
+		
+		new UserService().updatePw(userId, userPw, changePw);
+		response.sendRedirect(request.getContextPath() + "/logout");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

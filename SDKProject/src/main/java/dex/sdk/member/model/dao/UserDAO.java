@@ -135,46 +135,7 @@ public class UserDAO {
 		}		
 	}
 
-	public int checkPw(String userPw) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rset = null;
-		String sql ="""
-					SELECT COUNT(*) 
-					FROM TB_USER
-					WHERE USER_PW = ?
-					""";
-		int result = 0;
-		try {
-			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, userPw);
-			rset = pstmt.executeQuery();
-			rset.next();
-			result = rset.getInt("COUNT(*)");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if(rset != null) rset.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				if(pstmt != null) pstmt.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				if(conn != null) conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		return result;
-	}
-
-	public void updatePw(String userId, String userPw, String changePw) {
+	public int updatePw(String userId, String userPw, String changePw) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql ="""
@@ -202,10 +163,11 @@ public class UserDAO {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		}		
+		}
+		return 0;		
 	}
 	
-	public void delete(String userId, String userPw) {
+	public int delete(String userId, String userPw) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql ="""
@@ -231,7 +193,8 @@ public class UserDAO {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		}		
+		}
+		return 0;		
 	}
 
 }

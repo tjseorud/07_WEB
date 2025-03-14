@@ -3,11 +3,6 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<typeAliases>
-		<!-- typeAliases :자바타입 별칭 짓기 -->
-		<typeAlias type="com.kh.mfw.member.model.dto.MemberDTO" alias="MemberDTO"/>
-	</typeAliases>
-	
 	<!-- environments :MyBatis를 이용해서 연동할 DBMS의 정보를 등록하는 태그 -->
 	<environments default="development">
 		<environment id="development">
@@ -24,17 +19,16 @@
 					UNPOOLED	:안쓴다
 				보편적으로는 사용함
 			 -->
-			 <dataSource type="POOLED">
+			<dataSource type="POOLED">
 				<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
 				<property name="url" value="jdbc:oracle:thin:@112.221.156.34:12345:XE"/>
 				<property name="username" value="KH14_SDK"/>
-				<property name="password" value="KH1234"/>					
+				<property name="password" value="KH1234"/>				
 			</dataSource>
 		</environment>
 	</environments>	
-			
 	<mappers>
 		<!-- mappers :실행할 SQL문을 기록해둔 mapper파일을 등록 -->
 		<mapper resource="/mappers/member-mapper.xml"/>
-	</mappers>	
+	</mappers>
 </configuration>
