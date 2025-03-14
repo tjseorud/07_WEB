@@ -178,8 +178,8 @@ public class UserDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql ="""
-				UPDATE USER_PW = ?
-				SET TB_USER
+				UPDATE TB_USER
+				SET USER_PW = ?
 				WHERE USER_ID = ? AND USER_PW = ?
 				""";
 		try {
