@@ -24,9 +24,9 @@ public class SignUpController extends HttpServlet {
 		String userId = request.getParameter("userId");
 		String userPw = request.getParameter("userPw");
 		String userName = request.getParameter("userName");
-		UserDTO userDTO = new UserDTO(userId, userPw, userName, null);
+		UserDTO user = new UserDTO(userId, userPw, userName, null);
 		
-		int result = new UserService().signUp(userDTO);
+		int result = new UserService().signUp(user);
 		String path = request.getContextPath();
 		response.sendRedirect(result != 0 ? path + "/sign" : path);
 	}

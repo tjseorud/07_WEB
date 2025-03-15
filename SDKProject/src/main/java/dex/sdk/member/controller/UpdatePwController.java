@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dex.sdk.member.model.dto.UserDTO;
 import dex.sdk.member.model.service.UserService;
 
 @WebServlet("/update-pw")
@@ -26,8 +27,10 @@ public class UpdatePwController extends HttpServlet {
 		HttpSession session = request.getSession();		
 		String userId = null;	
 		
-		new UserService().updatePw(userId, userPw, changePw);
-		response.sendRedirect(request.getContextPath() + "/logout");
+		UserDTO user = new UserDTO(userId, userPw, null, null);
+		int result = new UserService().updatePw(user, changePw);		
+		String path = request.getContextPath();
+		response.sendRedirect(result != 0 ? path + "/logout" : path);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -3,6 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+	<typeAliases>
+		<typeAlias type="dex.sdk.member.model.dto.UserDTO" alias="UserDTO"/>
+	</typeAliases>
 	<!-- environments :MyBatis를 이용해서 연동할 DBMS의 정보를 등록하는 태그 -->
 	<environments default="development">
 		<environment id="development">
