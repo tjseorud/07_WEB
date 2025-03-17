@@ -6,6 +6,7 @@
 	<typeAliases>
 		<!-- typeAliases :자바타입 별칭 짓기 -->
 		<typeAlias type="com.kh.mfw.member.model.dto.MemberDTO" alias="MemberDTO"/>
+		<typeAlias type="com.kh.mfw.board.model.dto.BoardDTO" alias="BoardDTO"/>
 	</typeAliases>
 	
 	<!-- environments :MyBatis를 이용해서 연동할 DBMS의 정보를 등록하는 태그 -->
@@ -36,5 +37,6 @@
 	<mappers>
 		<!-- mappers :실행할 SQL문을 기록해둔 mapper파일을 등록 -->
 		<mapper resource="/mappers/member-mapper.xml"/>
+		<mapper resource="/mappers/board-mapper.xml"/>
 	</mappers>	
 </configuration>

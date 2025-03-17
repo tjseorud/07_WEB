@@ -41,11 +41,11 @@
 	<insert id="signUp" parameterType="MemberDTO">
 		INSERT 
 		  INTO KH_MEMBER
-		VALUES ( #{ memberId }
+		VALUES (#{ memberId }
 			 , #{ memberPw }
 			 , #{ memberName }
 			 , #{ email }
-			 , DEFAULT )
+			 , DEFAULT)
 	</insert>
 	
 </mapper>
