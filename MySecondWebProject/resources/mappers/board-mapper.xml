@@ -38,7 +38,7 @@
 	<update id="increaseCount" parameterType="_int">
 		UPDATE KH_BOARD
 		   SET COUNT = COUNT + 1
-		 WHERE BOARD_NO #{ boardNo }
+		 WHERE BOARD_NO = #{ boardNo }
 	</update>
 	
 	<select id="findByBoardNo" parameterType="_int" resultType="BoardDTO">
