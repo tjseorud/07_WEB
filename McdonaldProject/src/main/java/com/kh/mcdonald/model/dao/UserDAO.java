@@ -20,7 +20,7 @@ public class UserDAO {
 	
 	public List<UserDTO> selectAll() {
 		List<UserDTO> list = new ArrayList<UserDTO>();
-		String url ="jdbc:oracle:thin:@112.221.156.34:12345:xe";
+		String url ="jdbc:oracle:thin:@127.0.0.1:12345:xe";
 		String userName ="KH14_SDK";
 		String password ="KH1234";
 		String sql ="""

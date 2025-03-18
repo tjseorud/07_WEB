@@ -16,7 +16,7 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 	}
-	protected final String url = "jdbc:oracle:thin:@112.221.156.34:12345:XE";
+	protected final String url = "jdbc:oracle:thin:@127.0.0.1:12345:XE";
 	protected final String userName = "KH14_SDK";
 	protected final String password = "KH1234";		
 	
