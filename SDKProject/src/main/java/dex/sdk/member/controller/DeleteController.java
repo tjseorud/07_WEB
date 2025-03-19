@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dex.sdk.member.model.dto.UserDTO;
 import dex.sdk.member.model.service.UserService;
@@ -20,7 +21,9 @@ public class DeleteController extends HttpServlet {
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String userId = null;	//request.getSession()
+		HttpSession session = request.getSession();	
+		
+		String userId = ((UserDTO)session.getAttribute("loginUser")).getUserId();
 		String userPw = request.getParameter("userPwd");	
 		
 		UserDTO user = new UserDTO(userId, userPw, null, null);

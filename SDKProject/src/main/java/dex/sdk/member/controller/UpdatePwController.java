@@ -21,13 +21,15 @@ public class UpdatePwController extends HttpServlet {
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");		
-		String userPw = request.getParameter("userPwd");
 		String changePw = request.getParameter("changePwd");		
 		
-		HttpSession session = request.getSession();		
-		String userId = null;	
+		HttpSession session = request.getSession();	
+		String userId = ((UserDTO)session.getAttribute("loginUser")).getUserId();	
 		
-		UserDTO user = new UserDTO(userId, userPw, null, null);
+		UserDTO user = new UserDTO();
+		user.setUserId(userId);
+		user.setUserPw(request.getParameter("userPwd"));
+		
 		int result = new UserService().updatePw(user, changePw);		
 		String path = request.getContextPath();
 		response.sendRedirect(result != 0 ? path + "/logout" : path);
